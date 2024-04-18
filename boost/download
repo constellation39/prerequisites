@@ -115,8 +115,7 @@ mkdir -p "$source_dir" \
   || die_with_runtime_error "$PROGRAM_NAME" "Failed to create the source directory \`$source_dir'."
 
 tarball_name="boost-$version.tar.gz"
-
-(cd "$temp_dir" && curl -fLsSo "$tarball_name" "https://github.com/boostorg/boost/releases/download/boost-$version/boost-$version.tar.gz") \
+(cd "$temp_dir" && curl -fLsSo "$tarball_name" "https://github.com/boostorg/boost/releases/download/boost-$version/boost-$version-cmake.tar.gz") \
   || die_with_runtime_error "$PROGRAM_NAME" "Failed to download \`$tarball_name'."
 
 tar xf "$temp_dir/$tarball_name" -C "$source_dir" --strip-components=1 \
